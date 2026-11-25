@@ -1,0 +1,366 @@
+html:has(.detail-dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+
+.detail-dialog {
+  --dialog-padding: clamp(1.25rem, 3.55vw, 3.5rem);
+  --dialog-gap: clamp(1.2rem, 3.25vw, 3.45rem);
+  position: fixed;
+  inset: 0;
+  inline-size: min(81rem, 86vw);
+  max-inline-size: none;
+  max-block-size: 90dvh;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--ink);
+}
+
+.detail-dialog::backdrop {
+  background: rgb(12 16 20 / 72%);
+  backdrop-filter: blur(2px);
+}
+
+.detail-dialog[open] {
+  animation: dialog-enter 240ms var(--ease-out) both;
+}
+
+@keyframes dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.55rem);
+  }
+}
+
+.dialog-toolbar {
+  position: sticky;
+  z-index: 1;
+  inset-block-start: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem var(--dialog-padding) 0.4rem;
+  background: var(--background);
+}
+
+.dialog-close {
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--ink);
+  font-size: 1.28rem;
+  cursor: pointer;
+}
+
+.dialog-close:is(:hover, :focus-visible) {
+  background: var(--contact-panel);
+}
+
+.dialog-content {
+  padding: 0.3rem var(--dialog-padding) var(--dialog-padding);
+}
+
+.treatment-detail,
+.profile-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: var(--dialog-gap);
+}
+
+.profile-intro {
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.35fr);
+}
+
+.visit-detail {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+}
+
+.detail-copy {
+  display: grid;
+  justify-items: start;
+  gap: clamp(0.7rem, 1.35vw, 1.35rem);
+  font-size: clamp(1rem, 1.55vw, 1.4rem);
+}
+
+.detail-title {
+  max-inline-size: 19ch;
+  font-size: clamp(2.15rem, 5.15vw, 5.05rem);
+  text-wrap: balance;
+}
+
+.profile-intro .detail-title {
+  font-size: clamp(2.05rem, 4.5vw, 4.5rem);
+}
+
+.detail-lead {
+  font-size: 1.17em;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.detail-label {
+  padding: 0.3em 0.8em;
+  border-radius: 100vw;
+  background: var(--display-aqua);
+  font-size: 0.83em;
+  font-weight: var(--weight-ui);
+}
+
+.detail-rule {
+  inline-size: 100%;
+  padding-block-start: 0.85rem;
+  border-block-start: 2px solid var(--accent-line);
+}
+
+.detail-rule h3 {
+  margin-block-end: 0.25em;
+  font-size: clamp(1.25rem, 2.5vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.detail-copy .button {
+  margin-block-start: 0.15rem;
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+}
+
+.detail-figure {
+  position: relative;
+  margin: 0;
+}
+
+.profile-image {
+  aspect-ratio: 1 / 1.04;
+  max-block-size: min(33dvh, 25rem);
+}
+
+.profile-image img {
+  object-position: center 30%;
+}
+
+.image-label {
+  position: absolute;
+  inset: auto auto 0.7rem 0.7rem;
+  max-inline-size: calc(100% - 1.4rem);
+  padding: 0.33rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--background);
+  color: var(--ink);
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.profile-background {
+  inline-size: 100%;
+  padding-block: 0.65rem;
+  border-block: 1px solid var(--rule);
+  font-size: 0.86em;
+}
+
+.profile-background summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profile-background-copy {
+  display: grid;
+  gap: 0.35rem;
+  margin-block-start: 0.55rem;
+}
+
+.detail-note {
+  font-size: 0.9em;
+  font-weight: var(--weight-ui);
+}
+
+.detail-group {
+  margin-block-start: clamp(1.4rem, 2.25vw, 2.2rem);
+}
+
+.detail-group h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em;
+  margin-block-end: 0.7rem;
+  padding-block-end: 0.55rem;
+  border-block-end: 2px solid var(--accent-line);
+  font-size: clamp(1.18rem, 2.1vw, 1.8rem);
+  letter-spacing: -0.025em;
+}
+
+.detail-group h3 span {
+  font-size: 0.72em;
+  font-weight: var(--weight-ui);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(0.7rem, 1.35vw, 1.35rem);
+}
+
+.team-profile {
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--contact-panel);
+}
+
+.team-profile summary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.65rem;
+  padding-inline-end: 0.8rem;
+  list-style: none;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.team-profile summary::-webkit-details-marker {
+  display: none;
+}
+
+.team-profile summary:focus-visible {
+  outline-offset: -0.22rem;
+}
+
+.team-profile summary:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.team-profile img {
+  inline-size: 100%;
+  aspect-ratio: 1.2;
+  block-size: auto;
+  object-fit: cover;
+  object-position: center 19%;
+}
+
+.team-profile[open] summary {
+  grid-template-columns: minmax(0, 1fr) auto;
+  row-gap: 0.7rem;
+  padding: 0.65rem 0.75rem 0;
+}
+
+.team-profile[open] img {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  block-size: clamp(13rem, 23vw, 19rem);
+  border-radius: 0.65rem;
+  background: var(--background);
+  object-fit: contain;
+  object-position: center;
+}
+
+.team-profile[open] .team-icon {
+  transform: rotate(180deg);
+}
+
+.team-profile p {
+  padding: 0.45rem 0.75rem 0.85rem;
+}
+
+.detail-portrait,
+.visit-video {
+  aspect-ratio: 0.79;
+  max-block-size: 38rem;
+}
+
+.detail-landscape {
+  aspect-ratio: 1.65;
+}
+
+.detail-media-stack {
+  display: grid;
+  gap: clamp(0.65rem, 1.2vw, 1.1rem);
+}
+
+.visit-video video {
+  object-position: 50% 42%;
+}
+
+.visit-photo {
+  inline-size: 100%;
+  aspect-ratio: 2.65;
+}
+
+.visit-photo img {
+  object-position: 50% 54%;
+}
+
+.video-frame video {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .detail-dialog {
+    position: fixed;
+    inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 100dvh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .treatment-detail,
+  .profile-intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .profile-image {
+    aspect-ratio: 1.15;
+    max-block-size: 22rem;
+  }
+
+  .detail-portrait {
+    aspect-ratio: 1.2;
+    max-block-size: 23rem;
+  }
+
+  .visit-video {
+    inline-size: min(100%, 22rem);
+    justify-self: center;
+    aspect-ratio: 0.76;
+    max-block-size: 52dvh;
+  }
+
+  .detail-copy .button {
+    inline-size: 100%;
+  }
+
+  .team-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .team-profile:not([open]) summary {
+    grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-dialog[open] {
+    animation: none;
+  }
+}
+
+.video-unavailable {
+  background-image: var(--video-poster);
+  background-position: center;
+  background-size: cover;
+}

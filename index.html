@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="./css/studio.css">
     <link rel="stylesheet" href="./css/trattamenti.css">
     <link rel="stylesheet" href="./css/contatti.css">
+    <link rel="stylesheet" href="./css/approfondimenti.css">
 
     <script type="module" src="./js/main.js"></script>
   </head>
@@ -43,6 +44,12 @@
       </symbol>
       <symbol id="freccia-diagonale" viewBox="0 0 24 24">
         <path d="M5 19 19 5M8 5h11v11"/>
+      </symbol>
+      <symbol id="chiudi" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"/>
+      </symbol>
+      <symbol id="espandi" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6"/>
       </symbol>
     </svg>
 
@@ -140,20 +147,19 @@
             <span class="heading-line"><span>Studio</span></span>
           </h2>
 
-          <div class="media-frame studio-media" data-reveal="image" data-parallax="0.035">
-            <img
-              src="./assets/images/studio-preparazione.webp"
-              srcset="
-                ./assets/images/studio-preparazione-mobile.webp 768w,
-                ./assets/images/studio-preparazione.webp 1500w
-              "
-              sizes="(max-width: 767px) 94vw, 58vw"
-              width="1500"
-              height="938"
-              alt="Mani con guanti azzurri preparano gli strumenti su un vassoio"
-              loading="lazy"
-              decoding="async"
-            >
+          <div class="media-frame studio-media video-frame" data-reveal="image">
+            <video
+              id="video-studio"
+              src="./assets/videos/studio.mp4"
+              poster="./assets/images/approfondimenti/studio-video-poster.webp"
+              width="1280"
+              height="720"
+              aria-label="Video illustrativo, strumenti odontoiatrici sul vassoio"
+              muted
+              loop
+              playsinline
+              preload="none"
+            ></video>
           </div>
 
           <div class="studio-content">
@@ -173,27 +179,32 @@
             <div class="studio-gallery">
               <div class="media-frame" data-reveal="image" data-parallax="-0.021">
                 <img
-                  src="./assets/images/studio-strumenti.webp"
-                  width="720"
-                  height="540"
-                  alt="Specchietto e strumenti odontoiatrici su un telo azzurro"
+                  src="./assets/images/approfondimenti/targa.webp"
+                  width="1152"
+                  height="864"
+                  alt="Mockup della targhetta RE-smile all’ingresso dello studio"
                   loading="lazy"
                   decoding="async"
                 >
               </div>
               <div class="media-frame" data-reveal="image" data-parallax="0.027">
                 <img
-                  src="./assets/images/studio-sala-attesa.webp"
-                  width="720"
-                  height="540"
-                  alt="Sala d’attesa illustrativa con poltrone azzurre"
+                  src="./assets/images/approfondimenti/divisa.webp"
+                  width="1152"
+                  height="864"
+                  alt="Mockup della divisa con il logo RE-smile ricamato"
                   loading="lazy"
                   decoding="async"
                 >
               </div>
             </div>
 
-            <a class="text-link studio-link" href="#contatti" data-reveal>
+            <a
+              class="text-link studio-link"
+              href="#contatti"
+              data-dialog="dettaglio-studio"
+              data-reveal
+            >
               Vieni a conoscere RE-smile
               <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
             </a>
@@ -231,6 +242,7 @@
                 href="#contatti"
                 aria-labelledby="sorriso-title"
                 aria-describedby="sorriso-description"
+                data-dialog="dettaglio-sorriso"
               >
                 <div class="treatment-copy">
                   <h3 id="sorriso-title">Estetica del sorriso</h3>
@@ -258,6 +270,7 @@
                 href="#contatti"
                 aria-labelledby="faccette-title"
                 aria-describedby="faccette-description"
+                data-dialog="dettaglio-faccette"
               >
                 <div class="treatment-copy">
                   <h3 id="faccette-title">Faccette in composito</h3>
@@ -285,6 +298,7 @@
                 href="#contatti"
                 aria-labelledby="visita-title"
                 aria-describedby="visita-description"
+                data-dialog="dettaglio-visita"
               >
                 <div class="treatment-copy">
                   <h3 id="visita-title">La prima visita</h3>
@@ -309,22 +323,39 @@
         </div>
       </section>
 
-      <section id="contatti" class="section contacts" aria-labelledby="contacts-title">
+      <section
+        id="contatti"
+        class="section contacts"
+        aria-labelledby="contacts-title"
+        tabindex="-1"
+      >
         <div class="shell contacts-layout">
           <h2 id="contacts-title" class="section-title contacts-title" data-reveal="heading">
             <span class="heading-line"><span>Contatti</span></span>
           </h2>
 
           <div class="contacts-content">
-            <p class="section-heading contacts-heading" data-reveal="heading">
-              <span class="heading-line"><span>Il primo passo?</span></span>
-              <span class="heading-line"><span>Parliamone.</span></span>
-            </p>
-            <p class="contacts-description" data-reveal>
-              Contatta lo studio per informazioni e per richiedere un appuntamento.
-            </p>
+            <div class="contacts-copy">
+              <p class="section-heading contacts-heading" data-reveal="heading">
+                <span class="heading-line"><span>Il primo passo?</span></span>
+                <span class="heading-line"><span>Parliamone.</span></span>
+              </p>
+              <p class="contacts-description" data-reveal>
+                Contatta lo studio per informazioni e per richiedere un appuntamento.
+              </p>
+            </div>
 
             <div class="contacts-actions" data-reveal>
+              <div class="media-frame contacts-card-photo">
+                <img
+                  src="./assets/images/approfondimenti/biglietti.webp"
+                  width="1152"
+                  height="864"
+                  alt="Mockup dei biglietti da visita e appuntamento RE-smile"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
               <p class="contact-phone">
                 <span>Telefono</span>
                 <span>0982 972621</span>
@@ -382,5 +413,282 @@
         <svg class="icon" aria-hidden="true"><use href="#freccia"/></svg>
       </a>
     </footer>
+
+    <dialog
+      id="dettaglio-studio"
+      class="detail-dialog"
+      aria-labelledby="dettaglio-studio-titolo"
+    >
+      <div class="dialog-surface">
+        <div class="dialog-toolbar">
+          <button class="dialog-close" type="button" aria-label="Chiudi" data-close autofocus>
+            <svg class="icon" aria-hidden="true"><use href="#chiudi"/></svg>
+          </button>
+        </div>
+
+        <div class="dialog-content">
+          <div class="profile-intro">
+            <figure class="detail-figure media-frame profile-image">
+              <img
+                src="./assets/images/approfondimenti/ritratto-dimostrativo.webp"
+                width="760"
+                height="1013"
+                alt="Ritratto illustrativo di una professionista in camice"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+
+            <div class="detail-copy">
+              <h2 id="dettaglio-studio-titolo" class="section-heading detail-title">
+                Conosci la Dott.ssa Anna Bilotta
+              </h2>
+              <p class="detail-lead">Dott.ssa Anna Bilotta, odontoiatra.</p>
+              <p>Durante la visita ascolta le tue domande e ti spiega i prossimi passi.</p>
+
+              <details class="profile-background">
+                <summary>Formazione e percorso</summary>
+                <div class="profile-background-copy">
+                  <p>
+                    Laureata presso l'Università Cattolica del Sacro Cuore di Roma.
+                  </p>
+                  <p class="detail-note">
+                    specializzata in endodonzia, implantologia e protesi dentaria.
+                  </p>
+                </div>
+              </details>
+
+              <a class="button" href="#contatti" data-dialog-contact>
+                Richiedi informazioni
+                <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <section class="detail-group" aria-labelledby="team-titolo">
+            <h3 id="team-titolo">Il team</h3>
+            <ul class="team-grid">
+              <li>
+                <details class="team-profile" name="team-re-smile">
+                  <summary>
+                    <img
+                      src="./assets/images/approfondimenti/team-01.webp"
+                      width="400"
+                      height="533"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <span>Profilo 1</span>
+                    <svg class="icon team-icon" aria-hidden="true">
+                      <use href="#espandi"/>
+                    </svg>
+                  </summary>
+                  <p>Segue le visite di controllo e si occupa di prevenzione.</p>
+                </details>
+              </li>
+              <li>
+                <details class="team-profile" name="team-re-smile">
+                  <summary>
+                    <img
+                      src="./assets/images/approfondimenti/team-02.webp"
+                      width="400"
+                      height="533"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <span>Profilo 2</span>
+                    <svg class="icon team-icon" aria-hidden="true">
+                      <use href="#espandi"/>
+                    </svg>
+                  </summary>
+                  <p>Spiega le opzioni di cura e aiuta a scegliere i prossimi passi.</p>
+                </details>
+              </li>
+              <li>
+                <details class="team-profile" name="team-re-smile">
+                  <summary>
+                    <img
+                      src="./assets/images/approfondimenti/team-03.webp"
+                      width="400"
+                      height="533"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    >
+                    <span>Profilo 3</span>
+                    <svg class="icon team-icon" aria-hidden="true">
+                      <use href="#espandi"/>
+                    </svg>
+                  </summary>
+                  <p>Accoglie i pazienti e li accompagna durante le visite.</p>
+                </details>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      id="dettaglio-sorriso"
+      class="detail-dialog"
+      aria-labelledby="dettaglio-sorriso-titolo"
+    >
+      <div class="dialog-surface">
+        <div class="dialog-toolbar">
+          <button class="dialog-close" type="button" aria-label="Chiudi" data-close autofocus>
+            <svg class="icon" aria-hidden="true"><use href="#chiudi"/></svg>
+          </button>
+        </div>
+        <div class="dialog-content treatment-detail">
+          <div class="media-frame detail-portrait">
+            <img
+              src="./assets/images/approfondimenti/controllo-sorriso.webp"
+              width="900"
+              height="1195"
+              alt="Primo piano illustrativo di un sorriso con specchietto odontoiatrico"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="detail-copy">
+            <span class="detail-label">I trattamenti</span>
+            <h2 id="dettaglio-sorriso-titolo" class="section-heading detail-title">
+              Estetica del sorriso
+            </h2>
+            <p class="detail-lead">Un progetto da valutare insieme.</p>
+            <p>Uno spazio per parlare delle tue esigenze e delle aspettative sul tuo sorriso.</p>
+
+            <div class="detail-rule">
+              <h3>Da dove iniziare</h3>
+              <p>Il primo passo è un confronto in studio per valutare insieme il percorso.</p>
+            </div>
+
+            <a class="button" href="#contatti" data-dialog-contact>
+              Richiedi informazioni
+              <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      id="dettaglio-faccette"
+      class="detail-dialog"
+      aria-labelledby="dettaglio-faccette-titolo"
+    >
+      <div class="dialog-surface">
+        <div class="dialog-toolbar">
+          <button class="dialog-close" type="button" aria-label="Chiudi" data-close autofocus>
+            <svg class="icon" aria-hidden="true"><use href="#chiudi"/></svg>
+          </button>
+        </div>
+        <div class="dialog-content treatment-detail">
+          <div class="detail-media-stack">
+            <div class="media-frame detail-landscape">
+              <img
+                src="./assets/images/trattamento-faccette-composito.webp"
+                width="800"
+                height="450"
+                alt="Modello dentale bianco esaminato con uno strumento"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <figure class="media-frame detail-figure detail-landscape">
+              <img
+                src="./assets/images/approfondimenti/strumenti-visita.webp"
+                width="920"
+                height="687"
+                alt="Professionista in mascherina con specchietto e sonda dentale"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+          </div>
+
+          <div class="detail-copy">
+            <span class="detail-label">I trattamenti</span>
+            <h2 id="dettaglio-faccette-titolo" class="section-heading detail-title">
+              Faccette in composito
+            </h2>
+            <p class="detail-lead">Informazioni e valutazione in studio.</p>
+            <p>Un incontro per conoscere le possibilità e valutare le esigenze del tuo sorriso.</p>
+
+            <div class="detail-rule">
+              <h3>Un percorso da definire insieme</h3>
+              <p>Indicazioni e modalità vengono discusse durante la valutazione in studio.</p>
+            </div>
+
+            <a class="button" href="#contatti" data-dialog-contact>
+              Richiedi informazioni
+              <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog
+      id="dettaglio-visita"
+      class="detail-dialog"
+      aria-labelledby="dettaglio-visita-titolo"
+    >
+      <div class="dialog-surface">
+        <div class="dialog-toolbar">
+          <button class="dialog-close" type="button" aria-label="Chiudi" data-close autofocus>
+            <svg class="icon" aria-hidden="true"><use href="#chiudi"/></svg>
+          </button>
+        </div>
+        <div class="dialog-content treatment-detail visit-detail">
+          <div class="media-frame video-frame visit-video">
+            <video
+              id="video-prima-visita"
+              src="./assets/videos/prima-visita.mp4"
+              poster="./assets/images/approfondimenti/prima-visita-video-poster.webp"
+              width="720"
+              height="1280"
+              aria-label="Video illustrativo di una visita odontoiatrica"
+              muted
+              loop
+              playsinline
+              preload="none"
+            ></video>
+          </div>
+
+          <div class="detail-copy">
+            <span class="detail-label">I trattamenti</span>
+            <h2 id="dettaglio-visita-titolo" class="section-heading detail-title">
+              La prima visita
+            </h2>
+            <p class="detail-lead">Uno spazio per ascoltare le tue esigenze.</p>
+            <p>
+              Un primo incontro per conoscerci, raccogliere le tue domande
+              e confrontarci sul percorso di cura.
+            </p>
+
+            <div class="media-frame visit-photo">
+              <img
+                src="./assets/images/approfondimenti/esame-odontoiatrico.webp"
+                width="840"
+                height="1260"
+                alt="Immagine illustrativa di un controllo odontoiatrico con specchietto"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+
+            <a class="button" href="#contatti" data-dialog-contact>
+              Richiedi informazioni
+              <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>
