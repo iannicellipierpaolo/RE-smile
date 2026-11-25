@@ -1,0 +1,167 @@
+.site-header {
+  position: sticky;
+  z-index: 5;
+  inset-block-start: 0;
+  background: var(--background);
+}
+
+.header-layout {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  min-block-size: var(--header-height);
+}
+
+.header-brand {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.brand img {
+  block-size: auto;
+}
+
+.site-nav {
+  display: grid;
+  grid-column: 2 / -1;
+  grid-row: 1;
+  grid-template-columns: subgrid;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  gap: clamp(1.2rem, 3.65vw, 3.9rem);
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  font-size: clamp(0.95rem, 1.48vw, 1.5rem);
+  font-weight: var(--weight-ui);
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.nav-links a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: 0.23em;
+}
+
+.header-booking {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  font-size: clamp(0.9rem, 1.37vw, 1.38rem);
+}
+
+@media (max-width: 767px) {
+  .header-layout {
+    grid-template-columns: 1fr auto;
+    container-type: normal;
+  }
+
+  .header-brand {
+    inline-size: min(10rem, 65vw);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.55rem;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    inline-size: 1.48rem;
+    block-size: 0.13rem;
+    border-radius: 1rem;
+    background: currentColor;
+    transition: transform 240ms var(--ease-out);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(0.24rem) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-0.24rem) rotate(-45deg);
+  }
+
+  .site-nav {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+    padding-block-end: 0.9rem;
+  }
+
+  .nav-links {
+    grid-column: auto;
+    grid-row: auto;
+    flex-wrap: wrap;
+    gap: 0 clamp(0.65rem, 4vw, 1.5rem);
+  }
+
+  .header-booking {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  [data-menu-ready] .site-nav {
+    position: absolute;
+    inset: 100% 0 auto;
+    max-block-size: calc(100svh - var(--header-height));
+    overflow: auto;
+    padding: 0.75rem var(--gutter) 1.25rem;
+    border-block-end: 1px solid var(--rule);
+    background: var(--background);
+    box-shadow: 0 1.2rem 1.8rem rgb(12 16 20 / 8%);
+    animation: menu-enter 250ms var(--ease-out) both;
+  }
+
+  [data-menu-ready] .nav-links {
+    display: grid;
+    gap: 0;
+  }
+
+  [data-menu-ready] .nav-links a {
+    display: flex;
+    min-block-size: 3rem;
+    border-block-end: 1px solid var(--rule);
+    font-size: 1.12rem;
+  }
+
+  [data-menu-ready] .header-booking {
+    justify-self: stretch;
+  }
+}
+
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav {
+    animation: none !important;
+  }
+}

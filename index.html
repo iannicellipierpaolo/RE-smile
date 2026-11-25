@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#EEF3F7">
+    <meta
+      name="description"
+      content="RE-smile, studio odontoiatrico della Dott.ssa Anna Bilotta a Cetraro."
+    >
+    <title>RE-smile | Studio odontoiatrico a Cetraro</title>
+
+    <link
+      rel="preload"
+      href="./assets/fonts/Archivo-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link
+      rel="icon"
+      href="./assets/branding/favicon.png"
+      type="image/png"
+      sizes="48x48"
+    >
+    <link rel="apple-touch-icon" href="./assets/branding/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/studio.css">
+    <link rel="stylesheet" href="./css/trattamenti.css">
+    <link rel="stylesheet" href="./css/contatti.css">
+
+    <script type="module" src="./js/main.js"></script>
+  </head>
+
+  <body id="inizio">
+    <svg class="icon-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="freccia" viewBox="0 0 24 24">
+        <path d="M3 12h17m-7-7 7 7-7 7"/>
+      </symbol>
+      <symbol id="freccia-diagonale" viewBox="0 0 24 24">
+        <path d="M5 19 19 5M8 5h11v11"/>
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+    <header class="site-header">
+      <div class="shell header-layout">
+        <a class="brand header-brand" href="#inizio">
+          <img
+            src="./assets/branding/re-smile.webp"
+            width="760"
+            height="161"
+            alt="RE-smile, inizio pagina"
+          >
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Apri il menu"
+          aria-expanded="false"
+          aria-controls="menu-principale"
+          hidden
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="menu-principale" class="site-nav" aria-label="Menu principale">
+          <ul class="nav-links">
+            <li><a href="#studio">Studio</a></li>
+            <li><a href="#trattamenti">Trattamenti</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+
+          <a class="button header-booking" href="#contatti">
+            Prenota una visita
+            <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenuto" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="shell hero-layout">
+          <div class="hero-heading">
+            <h1 id="hero-title" class="hero-title" data-reveal="heading">
+              <span class="heading-line"><span>RE-smile</span></span>
+            </h1>
+            <p class="hero-subtitle" data-reveal="heading">
+              <span class="heading-line"><span>Dove rinascono</span></span>
+              <span class="heading-line"><span>i sorrisi.</span></span>
+            </p>
+          </div>
+
+          <div class="hero-actions" data-reveal>
+            <p class="hero-byline">
+              Studio odontoiatrico<br>
+              Dott.ssa Anna Bilotta
+            </p>
+            <a class="button" href="#contatti">
+              Prenota una visita
+              <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+            </a>
+            <a class="text-link" href="#studio">Scopri lo studio</a>
+          </div>
+
+          <div class="media-frame hero-media" data-reveal="image">
+            <img
+              src="./assets/images/hero-studio-panoramica.webp"
+              srcset="
+                ./assets/images/hero-studio-panoramica-mobile.webp 768w,
+                ./assets/images/hero-studio-panoramica.webp 1920w
+              "
+              sizes="(max-width: 767px) 94vw, 95vw"
+              width="1920"
+              height="640"
+              alt="Interno illustrativo di uno studio odontoiatrico luminoso"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </div>
+
+          <div class="hero-caption">
+            <p><strong>Cetraro</strong> · Via F. Pirrino, 37</p>
+            <a class="hero-scroll" href="#studio">Scorri per scoprire</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="studio" class="section studio" aria-labelledby="studio-title">
+        <div class="shell studio-layout">
+          <h2 id="studio-title" class="section-title studio-title" data-reveal="heading">
+            <span class="heading-line"><span>Studio</span></span>
+          </h2>
+
+          <div class="media-frame studio-media" data-reveal="image" data-parallax="0.035">
+            <img
+              src="./assets/images/studio-preparazione.webp"
+              srcset="
+                ./assets/images/studio-preparazione-mobile.webp 768w,
+                ./assets/images/studio-preparazione.webp 1500w
+              "
+              sizes="(max-width: 767px) 94vw, 58vw"
+              width="1500"
+              height="938"
+              alt="Mani con guanti azzurri preparano gli strumenti su un vassoio"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+
+          <div class="studio-content">
+            <p class="section-heading studio-heading" data-reveal="heading">
+              <span class="heading-line"><span>La cura parte</span></span>
+              <span class="heading-line"><span>dall’ascolto.</span></span>
+            </p>
+
+            <div class="studio-description" data-reveal>
+              <p class="studio-name">Dott.ssa Anna Bilotta</p>
+              <p>
+                Uno spazio dedicato al tuo sorriso, dove confrontarsi e costruire
+                insieme il percorso di cura.
+              </p>
+            </div>
+
+            <div class="studio-gallery">
+              <div class="media-frame" data-reveal="image" data-parallax="-0.021">
+                <img
+                  src="./assets/images/studio-strumenti.webp"
+                  width="720"
+                  height="540"
+                  alt="Specchietto e strumenti odontoiatrici su un telo azzurro"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+              <div class="media-frame" data-reveal="image" data-parallax="0.027">
+                <img
+                  src="./assets/images/studio-sala-attesa.webp"
+                  width="720"
+                  height="540"
+                  alt="Sala d’attesa illustrativa con poltrone azzurre"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </div>
+            </div>
+
+            <a class="text-link studio-link" href="#contatti" data-reveal>
+              Vieni a conoscere RE-smile
+              <svg class="icon" aria-hidden="true"><use href="#freccia-diagonale"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="trattamenti"
+        class="section treatments"
+        aria-labelledby="treatments-title"
+      >
+        <div class="shell treatments-layout">
+          <div class="treatments-intro">
+            <h2
+              id="treatments-title"
+              class="section-title treatments-title"
+              data-reveal="heading"
+            >
+              <span class="heading-line"><span>Cura</span></span>
+            </h2>
+            <p class="section-heading treatments-heading" data-reveal="heading">
+              <span class="heading-line"><span>Un percorso</span></span>
+              <span class="heading-line"><span>per il tuo sorriso.</span></span>
+            </p>
+            <div class="treatments-action" data-reveal>
+              <a class="text-link" href="#schede-trattamenti">Esplora i trattamenti</a>
+            </div>
+          </div>
+
+          <ul id="schede-trattamenti" class="treatment-list" aria-label="Trattamenti">
+            <li data-reveal>
+              <a
+                class="treatment-card"
+                href="#contatti"
+                aria-labelledby="sorriso-title"
+                aria-describedby="sorriso-description"
+              >
+                <div class="treatment-copy">
+                  <h3 id="sorriso-title">Estetica del sorriso</h3>
+                  <p id="sorriso-description">Un progetto da valutare insieme.</p>
+                </div>
+                <div class="media-frame treatment-image">
+                  <img
+                    src="./assets/images/trattamento-estetica-sorriso.webp"
+                    width="800"
+                    height="450"
+                    alt="Primo piano illustrativo di un sorriso"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <svg class="icon treatment-arrow" aria-hidden="true">
+                  <use href="#freccia"/>
+                </svg>
+              </a>
+            </li>
+
+            <li data-reveal>
+              <a
+                class="treatment-card"
+                href="#contatti"
+                aria-labelledby="faccette-title"
+                aria-describedby="faccette-description"
+              >
+                <div class="treatment-copy">
+                  <h3 id="faccette-title">Faccette in composito</h3>
+                  <p id="faccette-description">Informazioni e valutazione in studio.</p>
+                </div>
+                <div class="media-frame treatment-image">
+                  <img
+                    src="./assets/images/trattamento-faccette-composito.webp"
+                    width="800"
+                    height="450"
+                    alt="Modello dentale bianco tenuto con guanti azzurri"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <svg class="icon treatment-arrow" aria-hidden="true">
+                  <use href="#freccia"/>
+                </svg>
+              </a>
+            </li>
+
+            <li data-reveal>
+              <a
+                class="treatment-card"
+                href="#contatti"
+                aria-labelledby="visita-title"
+                aria-describedby="visita-description"
+              >
+                <div class="treatment-copy">
+                  <h3 id="visita-title">La prima visita</h3>
+                  <p id="visita-description">Uno spazio per ascoltare le tue esigenze.</p>
+                </div>
+                <div class="media-frame treatment-image">
+                  <img
+                    src="./assets/images/trattamento-prima-visita.webp"
+                    width="800"
+                    height="450"
+                    alt="Poltrona odontoiatrica accanto a una finestra"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <svg class="icon treatment-arrow" aria-hidden="true">
+                  <use href="#freccia"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contatti" class="section contacts" aria-labelledby="contacts-title">
+        <div class="shell contacts-layout">
+          <h2 id="contacts-title" class="section-title contacts-title" data-reveal="heading">
+            <span class="heading-line"><span>Contatti</span></span>
+          </h2>
+
+          <div class="contacts-content">
+            <p class="section-heading contacts-heading" data-reveal="heading">
+              <span class="heading-line"><span>Il primo passo?</span></span>
+              <span class="heading-line"><span>Parliamone.</span></span>
+            </p>
+            <p class="contacts-description" data-reveal>
+              Contatta lo studio per informazioni e per richiedere un appuntamento.
+            </p>
+
+            <div class="contacts-actions" data-reveal>
+              <p class="contact-phone">
+                <span>Telefono</span>
+                <span>0982 972621</span>
+              </p>
+              <!-- Con l’URL definitivo, aggiungere href e togliere hidden. -->
+              <a class="button button-outline" hidden>
+                Instagram
+                <svg class="icon" aria-hidden="true">
+                  <use href="#freccia-diagonale"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contacts-panel" data-reveal>
+            <div class="contacts-cell contacts-brand">
+              <img
+                class="brand"
+                src="./assets/branding/re-smile.webp"
+                width="760"
+                height="161"
+                alt="RE-smile"
+                loading="lazy"
+              >
+              <p>Dott.ssa Anna Bilotta</p>
+            </div>
+
+            <div class="contacts-cell">
+              <h3>Dove siamo</h3>
+              <address>
+                Via F. Pirrino, 37<br>
+                87022 Cetraro (CS)
+              </address>
+            </div>
+
+            <!-- Con l’URL della mappa, aggiungere href al link e togliere hidden. -->
+            <div class="contacts-cell" hidden>
+              <h3>Vieni a trovarci</h3>
+              <a class="text-link">
+                Apri la mappa
+                <svg class="icon" aria-hidden="true">
+                  <use href="#freccia-diagonale"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell site-footer">
+      <p>Studio odontoiatrico RE-smile</p>
+      <a class="text-link back-to-top" href="#inizio">
+        Torna su
+        <svg class="icon" aria-hidden="true"><use href="#freccia"/></svg>
+      </a>
+    </footer>
+  </body>
+</html>

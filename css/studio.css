@@ -1,0 +1,95 @@
+.studio-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.56fr) minmax(0, 1fr);
+  grid-template-areas:
+    "title content"
+    "media content";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(1.6rem, 3.6vw, 3.75rem);
+}
+
+.studio-title {
+  grid-area: title;
+  margin-block-end: 0.06em;
+  font-size: clamp(6rem, 15.4cqi, 15.25rem);
+}
+
+.studio-media {
+  grid-area: media;
+  align-self: start;
+  aspect-ratio: 1.64;
+}
+
+.studio-media img {
+  object-position: 45% 50%;
+}
+
+.studio-content {
+  grid-area: content;
+  align-self: center;
+  font-size: clamp(1rem, 1.71cqi, 1.7rem);
+}
+
+.studio-heading {
+  font-size: clamp(2.4rem, 6.08cqi, 6.1rem);
+}
+
+.studio-description {
+  display: grid;
+  gap: 0.45em;
+  margin-block-start: clamp(1rem, 2.3vw, 2.35rem);
+  letter-spacing: -0.028em;
+  line-height: 1.15;
+}
+
+.studio-name {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.studio-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.65rem, 1.1vw, 1.15rem);
+  margin-block: clamp(1.15rem, 2.5vw, 2.6rem) clamp(1rem, 2vw, 2.1rem);
+}
+
+.studio-gallery .media-frame {
+  aspect-ratio: 1.35;
+  border-radius: clamp(0.85rem, 1.6vw, 1.6rem);
+}
+
+.studio-link {
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+@media (max-width: 767px) {
+  .studio-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "media"
+      "content";
+    grid-template-rows: auto;
+    gap: 1.25rem;
+  }
+
+  .studio-title {
+    margin: 0;
+    font-size: min(30cqi, 10rem);
+  }
+
+  .studio-heading {
+    font-size: clamp(2.25rem, 14.5cqi, 4.5rem);
+  }
+
+  .studio-content {
+    margin-block-start: 0.55rem;
+    font-size: clamp(1rem, 4.9cqi, 1.22rem);
+  }
+
+  .studio-description {
+    line-height: 1.27;
+  }
+}

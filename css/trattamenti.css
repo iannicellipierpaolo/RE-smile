@@ -1,0 +1,143 @@
+.treatments-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.51fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.3rem, 2.05vw, 2.15rem);
+}
+
+.treatments-intro {
+  container-type: inline-size;
+}
+
+.treatments-title {
+  font-size: clamp(4rem, 42cqi, 15.75rem);
+}
+
+.treatments-heading {
+  margin-block-start: 0.2em;
+  font-size: clamp(2rem, 12.5cqi, 4.35rem);
+}
+
+.treatments-action {
+  max-inline-size: 90%;
+  margin-block-start: clamp(1.05rem, 2.65vw, 2.65rem);
+  padding-block-start: clamp(0.9rem, 1.65vw, 1.65rem);
+  border-block-start: 0.2rem solid var(--accent-line);
+  font-size: clamp(1rem, 5cqi, 1.75rem);
+}
+
+.treatment-list {
+  display: grid;
+  gap: clamp(0.65rem, 0.9vw, 0.95rem);
+}
+
+.treatment-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.7rem, 1.8vw, 1.9rem);
+  padding: clamp(0.85rem, 1.25vw, 1.25rem) clamp(1rem, 2.2vw, 2.15rem);
+  border-radius: clamp(1.2rem, 2.4vw, 2.45rem);
+  background: var(--card);
+  color: var(--on-dark);
+  text-decoration: none;
+  transition: background-color 260ms ease;
+}
+
+.treatment-card:is(:hover, :focus-visible) {
+  background: #1c282d;
+}
+
+.treatment-copy h3 {
+  font-size: clamp(1.4rem, 3.03cqi, 3.1rem);
+  font-weight: var(--weight-heading);
+  letter-spacing: -0.055em;
+  line-height: 1;
+  word-spacing: 0.035em;
+}
+
+.treatment-copy p {
+  margin-block-start: 0.4em;
+  font-size: clamp(0.95rem, 1.65cqi, 1.75rem);
+  letter-spacing: -0.028em;
+  line-height: 1.16;
+}
+
+.treatment-image {
+  aspect-ratio: 1.8;
+  border-radius: clamp(0.8rem, 1.75vw, 1.75rem);
+}
+
+.treatment-image img,
+.treatment-arrow {
+  transition: transform 300ms var(--ease-out);
+}
+
+.treatment-arrow {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .treatment-card:hover .treatment-image img {
+    transform: scale(1.045);
+  }
+
+  .treatment-card:hover .treatment-arrow {
+    transform: translateX(0.16em);
+  }
+}
+
+@media (max-width: 767px) {
+  .treatments-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.55rem;
+  }
+
+  .treatments-title {
+    font-size: min(29cqi, 9rem);
+  }
+
+  .treatments-heading {
+    font-size: clamp(1.8rem, 11cqi, 3.6rem);
+  }
+
+  .treatments-action {
+    max-inline-size: 76%;
+    padding-block-start: 0.55rem;
+    font-size: clamp(1rem, 4.8cqi, 1.2rem);
+  }
+
+  .treatment-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "copy arrow"
+      "image image";
+    align-items: start;
+    gap: 0.8rem 0.6rem;
+    padding: 0.9rem;
+  }
+
+  .treatment-copy {
+    grid-area: copy;
+    padding: 0.1rem 0.12rem;
+  }
+
+  .treatment-copy h3 {
+    max-inline-size: 14ch;
+    font-size: clamp(1.35rem, 7.4cqi, 2rem);
+  }
+
+  .treatment-copy p {
+    font-size: clamp(1rem, 4.7cqi, 1.18rem);
+  }
+
+  .treatment-image {
+    grid-area: image;
+    aspect-ratio: 2.6;
+  }
+
+  .treatment-arrow {
+    grid-area: arrow;
+    margin-block-start: 0.1rem;
+  }
+}

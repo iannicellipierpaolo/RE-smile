@@ -1,0 +1,134 @@
+.hero {
+  background:
+    radial-gradient(
+      ellipse at 87% 25%,
+      rgb(188 224 228 / 55%) 0%,
+      transparent 43%
+    );
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: clamp(1.1rem, 2vw, 2rem);
+  min-block-size: calc(100svh - var(--header-height));
+  padding-block: clamp(1.25rem, 5vh, 4rem) 1.25rem;
+}
+
+.hero-title {
+  font-size: clamp(6.5rem, 17.9cqi, 18rem);
+  font-weight: var(--weight-display);
+  letter-spacing: -0.077em;
+  line-height: 0.84;
+}
+
+.hero-subtitle {
+  margin-block-start: clamp(1.1rem, 1.65vw, 1.8rem);
+  font-size: clamp(2.8rem, 4.85cqi, 5.2rem);
+  font-weight: var(--weight-ui);
+  letter-spacing: -0.064em;
+  line-height: 0.92;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.95rem clamp(1.1rem, 2.5vw, 2.65rem);
+}
+
+.hero-byline {
+  padding-inline-end: clamp(1.1rem, 2.6vw, 2.7rem);
+  border-inline-end: 1px solid var(--rule);
+  font-size: clamp(1.1rem, 1.75vw, 1.8rem);
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.hero-actions .button {
+  font-size: clamp(1rem, 1.34vw, 1.34rem);
+}
+
+.hero-actions .text-link {
+  font-size: clamp(1rem, 1.38vw, 1.38rem);
+}
+
+.hero-media {
+  align-self: end;
+  block-size: clamp(8rem, 25vh, 15rem);
+  border-radius: clamp(1rem, 1.45vw, 1.45rem);
+}
+
+.hero-media img {
+  object-position: 50% 47%;
+}
+
+.hero-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding-block-start: 0.65rem;
+  border-block-start: 1px solid var(--rule);
+  font-size: clamp(0.88rem, 1.14vw, 1.15rem);
+}
+
+.hero-scroll {
+  text-decoration: none;
+}
+
+.hero-scroll:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    background:
+      radial-gradient(
+        ellipse at 92% 35%,
+        rgb(188 224 228 / 38%) 0%,
+        transparent 56%
+      );
+  }
+
+  .hero-layout {
+    grid-template-rows: none;
+    gap: 1.4rem;
+    min-block-size: auto;
+    padding-block: clamp(1.7rem, 8vw, 3.5rem) 0;
+  }
+
+  .hero-title {
+    font-size: 23.4cqi;
+  }
+
+  .hero-subtitle {
+    margin-block-start: 0.85rem;
+    font-size: clamp(1.85rem, 11.2cqi, 3.65rem);
+    font-weight: var(--weight-heading);
+  }
+
+  .hero-actions {
+    display: grid;
+    align-items: start;
+    gap: 0.85rem;
+  }
+
+  .hero-byline {
+    padding: 0;
+    border: 0;
+  }
+
+  .hero-actions .text-link {
+    justify-self: start;
+  }
+
+  .hero-media {
+    block-size: auto;
+    aspect-ratio: 3.4 / 1;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}
