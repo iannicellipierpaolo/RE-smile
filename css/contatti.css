@@ -25,6 +25,17 @@
   font-size: clamp(2.65rem, 6.2cqi, 6.25rem);
 }
 
+.contacts-heading[data-reveal="heading"] .heading-line:last-child {
+  overflow-clip-margin: 0.32em;
+}
+
+.contacts-emphasis {
+  text-decoration-line: underline;
+  text-decoration-color: var(--brand-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+}
+
 .contacts-description {
   max-inline-size: 33ch;
   font-size: clamp(1.05rem, 1.85cqi, 1.85rem);

@@ -13,6 +13,9 @@
   --ink: #0c1014;
   --card: #0e1317;
   --display-aqua: #bce0e4;
+  --text-aqua: #2b737c;
+  --petrol-dark: #164951;
+  --brand-green: #a8c504;
   --contact-panel: #c8e3ea;
   --accent-line: #8cd6de;
   --on-dark: #f7f9fa;
@@ -111,6 +114,10 @@ img {
   word-spacing: 0.045em;
 }
 
+.text-accent {
+  color: var(--text-aqua);
+}
+
 .heading-line {
   display: block;
 }
@@ -165,7 +172,7 @@ img {
   font-weight: var(--weight-ui);
   text-align: center;
   text-decoration: none;
-  transition: background-color 220ms ease, color 220ms ease;
+  transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease;
 }
 
 .button-outline {
@@ -178,10 +185,17 @@ img {
   color: var(--ink);
 }
 
+.button-booking:is(:hover, :focus-visible) {
+  border-color: var(--petrol-dark);
+  background: var(--petrol-dark);
+  color: var(--on-dark);
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
+  color: var(--text-aqua);
   font-weight: var(--weight-ui);
   text-decoration: underline;
   text-underline-offset: 0.22em;
@@ -190,7 +204,7 @@ img {
 }
 
 .text-link:is(:hover, :focus-visible) {
-  text-decoration-color: #39767c;
+  text-decoration-color: var(--brand-green);
 }
 
 .skip-link {

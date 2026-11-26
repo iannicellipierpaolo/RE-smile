@@ -41,11 +41,11 @@
   background: var(--card);
   color: var(--on-dark);
   text-decoration: none;
-  transition: background-color 260ms ease;
 }
 
-.treatment-card:is(:hover, :focus-visible) {
-  background: #1c282d;
+.treatment-accent,
+.treatment-card:is(:hover, :focus-visible) .treatment-arrow {
+  color: var(--brand-green);
 }
 
 .treatment-copy h3 {
@@ -68,13 +68,13 @@
   border-radius: clamp(0.8rem, 1.75vw, 1.75rem);
 }
 
-.treatment-image img,
-.treatment-arrow {
+.treatment-image img {
   transition: transform 300ms var(--ease-out);
 }
 
 .treatment-arrow {
   font-size: clamp(1.5rem, 3vw, 3rem);
+  transition: transform 300ms var(--ease-out), color 220ms ease;
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
