@@ -31,7 +31,7 @@
 
 .contacts-emphasis {
   text-decoration-line: underline;
-  text-decoration-color: var(--brand-green);
+  text-decoration-color: var(--display-aqua);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.14em;
 }
@@ -69,10 +69,23 @@
   font-weight: var(--weight-ui);
 }
 
-.contact-phone span:last-child {
+.contact-phone-number {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-aqua);
   font-size: clamp(1.95rem, 3.35cqi, 3.4rem);
   font-weight: 750;
   letter-spacing: -0.05em;
+  cursor: pointer;
+}
+
+.contact-phone-number:is(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-decoration-color: var(--brand-green);
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 2px;
 }
 
 .contacts-panel {

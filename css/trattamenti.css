@@ -45,7 +45,7 @@
 
 .treatment-accent,
 .treatment-card:is(:hover, :focus-visible) .treatment-arrow {
-  color: var(--brand-green);
+  color: var(--display-aqua);
 }
 
 .treatment-copy h3 {
